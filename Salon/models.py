@@ -27,3 +27,12 @@ class Cars(models.Model):
     class Meta:
         verbose_name = 'Car'
         verbose_name_plural = 'Cars'
+
+
+class Gallery(models.Model):
+    image = models.ImageField(upload_to='cars/', verbose_name='Photos of cars')
+    product = models.ForeignKey(Cars, on_delete=models.CASCADE, related_name='images')
+
+    class Meta:
+        verbose_name = 'Photo'
+        verbose_name_plural = 'Photos'
