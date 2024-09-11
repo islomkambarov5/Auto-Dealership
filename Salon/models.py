@@ -13,7 +13,7 @@ class Cars(models.Model):
     slug = models.SlugField(unique=True, null=True)
     color = models.CharField(max_length=30, verbose_name='Color')
     engine = models.CharField(max_length=30, verbose_name='Engine')
-    quantity = models.IntegerField(max_length=100, verbose_name='Quantity of cars')
+    quantity = models.IntegerField(verbose_name='Quantity of cars')
 
     def __str__(self):
         return f'{self.brand}: {self.model}'
@@ -31,7 +31,7 @@ class Cars(models.Model):
 
 class Gallery(models.Model):
     image = models.ImageField(upload_to='cars/', verbose_name='Photos of cars')
-    product = models.ForeignKey(Cars, on_delete=models.CASCADE, related_name='images')
+    car = models.ForeignKey(Cars, on_delete=models.CASCADE, related_name='images')
 
     class Meta:
         verbose_name = 'Photo'
