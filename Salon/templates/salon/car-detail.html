@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block main %}
+<section class="car-detail">
+    <div class="container">
+        <div class="car-images" data-aos="fade-right">
+            <img src="car-main.jpg" alt="Main Car Image" class="main-image">
+            <div class="thumbnail-images">
+                <img src="car-thumb1.jpg" alt="Car Thumbnail 1">
+            </div>
+        </div>
+        <div class="car-info" data-aos="fade-left">
+            <h1>{{ car.brand }}: {{ car.model }}</h1>
+            <p class="price">{{ car.price }}</p>
+            <p class="description">
+                {{ car.description }}
+            </p>
+            <ul class="specs">
+                <li><strong>Engine:</strong> {{ car.engine }}</li>
+                <li><strong>Color:</strong> {{ car.color }}</li>
+            </ul>
+            <a href="#" class="btn">Inquire Now</a>
+        </div>
+    </div>
+</section>
+{% endblock main %}

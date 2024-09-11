@@ -52,6 +52,16 @@ nav ul li a:hover {
     color: #ff6f61;
 }
 
+nav .logo a{
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav .logo a:hover{
+    color: #ff6f61;
+}
+
 /* Hero Section */
 .hero {
     background-image: url('photo-modern-red-sports-car-bright.jpg');
