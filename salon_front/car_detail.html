@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Model Detail - Auto Dealership</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">Auto Dealership</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Vehicles</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Car Detail Section -->
+    <section class="car-detail">
+        <div class="container">
+            <div class="car-images" data-aos="fade-right">
+                <img src="car-main.jpg" alt="Main Car Image" class="main-image">
+                <div class="thumbnail-images">
+                    <img src="car-thumb1.jpg" alt="Car Thumbnail 1">
+                    <img src="car-thumb2.jpg" alt="Car Thumbnail 2">
+                    <img src="car-thumb3.jpg" alt="Car Thumbnail 3">
+                </div>
+            </div>
+            <div class="car-info" data-aos="fade-left">
+                <h1>Car Model Name</h1>
+                <p class="price">$25,000</p>
+                <p class="description">
+                    This car offers exceptional performance, advanced technology, and a luxurious interior. Perfect for both city driving and long road trips.
+                </p>
+                <ul class="specs">
+                    <li><strong>Engine:</strong> 3.0L V6</li>
+                    <li><strong>Transmission:</strong> Automatic</li>
+                    <li><strong>Mileage:</strong> 20,000 miles</li>
+                    <li><strong>Color:</strong> Black</li>
+                </ul>
+                <a href="#" class="btn">Inquire Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Auto Dealership. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        const thumbnails = document.querySelectorAll('.thumbnail-images img');
+const mainImage = document.querySelector('.main-image');
+
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+        mainImage.src = thumbnail.src;
+    });
+});
+
+    </script>
+</body>
+</html>
