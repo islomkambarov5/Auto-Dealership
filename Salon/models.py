@@ -2,6 +2,8 @@ from django.db import models
 
 
 # Create your models here.
+from django.urls import reverse
+
 
 class Cars(models.Model):
     brand = models.CharField(max_length=100, verbose_name='Brand of car')
@@ -17,6 +19,9 @@ class Cars(models.Model):
 
     def __str__(self):
         return f'{self.brand}: {self.model}'
+
+    def get_absolute_url(self):
+        return reverse('car_detail', kwargs={'slug': self.slug})
 
     def get_car_photo(self):
         try:
