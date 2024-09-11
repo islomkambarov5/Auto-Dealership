@@ -1,10 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Dealership</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
 </head>
 <body>
 <!-- Header Section -->
@@ -20,6 +24,7 @@
     </nav>
 </header>
 
+{% block hero %}
 <!-- Hero Section -->
 <section class="hero">
     <div class="hero-content">
@@ -28,20 +33,12 @@
         <a href="#" class="btn">View Inventory</a>
     </div>
 </section>
+{% endblock hero %}
 
 <!-- Featured Vehicles -->
-<section class="featured-vehicles">
-    <h2>Featured Vehicles</h2>
-    <!-- Removed vehicle-grid class -->
-    <div class="vehicle-cards">
-        <div class="vehicle-card" data-aos="fade-up">
-            <img src="car1.jpg" alt="Car 1">
-            <h3>Car Model 1</h3>
-            <p>$20,000</p>
-        </div>
 
-    </div>
-</section>
+{% block main %}
+{% endblock main %}
 
 <!-- Footer -->
 <footer>
@@ -51,6 +48,8 @@
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
         AOS.init();
+
+
 
 </script>
 </body>

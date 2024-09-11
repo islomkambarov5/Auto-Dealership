@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block main %}
+<section class="featured-vehicles">
+    <h2>Featured Vehicles</h2>
+    <!-- Removed vehicle-grid class -->
+    <div class="vehicle-cards">
+        {% for car in cars %}
+        <div class="vehicle-card" data-aos="fade-up">
+            <img src="{{ car.get_car_photo }}" alt="Car 1">
+            <h3>{{ car.brand }}: {{ car.model }}</h3>
+            <p>{{ car.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock main %}

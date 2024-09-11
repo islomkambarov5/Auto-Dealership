@@ -33,6 +33,9 @@ class Gallery(models.Model):
     image = models.ImageField(upload_to='cars/', verbose_name='Photos of cars')
     car = models.ForeignKey(Cars, on_delete=models.CASCADE, related_name='images')
 
+    def __str__(self):
+        return self.car.model
+
     class Meta:
         verbose_name = 'Photo'
         verbose_name_plural = 'Photos'
