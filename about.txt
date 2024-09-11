@@ -1,0 +1,3 @@
+This django app is my own django project for adding new things, which I didn't know
+
+First I will do basic django project, then I will modify this document and this project, I will write about new features here
